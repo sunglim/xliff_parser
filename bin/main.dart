@@ -18,14 +18,14 @@ Map<String, String> LANGUAGE_CODE_MAP =
     "de-DE": "de",
     "el-GR": "el",
     "en-CN": "en",
-    "en-GB": "en",
+    "en-GB": "en-GB",
     "en-US": "en",
     "es-CO": "es",
     "es-ES": "es",
     "et-EE": "et",
     "fa-IR": "fa",
     "fi-FI": "fi",
-    "fr-CA": "fr",
+    "fr-CA": "fr-CA",
     "fr-FR": "fr",
     "ga-IE": "ga",
     "gu-IN": "gu",
@@ -51,8 +51,8 @@ Map<String, String> LANGUAGE_CODE_MAP =
     "nl-NL": "nl",
     "pa-IN": "pa",
     "pl-PL": "pl",
-    "pt-BR": "pt",
-    "pt-PT": "pt",
+    "pt-BR": "pt-BR",
+    "pt-PT": "pt-PT",
     "ro-RO": "ro",
     "ru-RU": "ru",
     "sk-SK": "sk",
@@ -69,9 +69,9 @@ Map<String, String> LANGUAGE_CODE_MAP =
     "uz-Cyrl-UZ": "uz",
     "uz-Latn-UZ": "uz",
     "vi-VN": "vi",
-    "zh-Hans-CN": "zh",
-    "zh-Hant-HK": "zh",
-    "zh-Hant-TW": "zh"
+    "zh-Hans-CN": "zh-CN",
+    "zh-Hant-HK": "zh-HK",
+    "zh-Hant-TW": "zh-TW"
   };
 
 main(List<String> arguments) {
@@ -102,7 +102,7 @@ main(List<String> arguments) {
                expected_file_name = z.toString().replaceFirst("target-language=\"", "").replaceFirst("\"", "");
                expected_file_name = LANGUAGE_CODE_MAP[expected_file_name];
                print(expected_file_name);
-               var gen = new File("./ttest/argenerated_resources_" + expected_file_name + ".xtb");
+               var gen = new File("./ttest/generated_resources_" + expected_file_name + ".xtb");
                gen.writeAsStringSync(to_write_text);
              }
             }
