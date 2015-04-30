@@ -87,7 +87,7 @@ main(List<String> arguments) {
   document.descendants.forEach((element) {
     // Exactly 
     //if (element.toString() == arguments[0]) {
-    if (element.toString() == "Data Only") {
+    if (element.toString() == "Audio Only") {
       var preced = element.ancestors;
       for(var i in preced) {
         var parent2 = i.ancestors;
@@ -101,7 +101,7 @@ main(List<String> arguments) {
             for(var z in k.attributes) {
              if(z.toString().contains("target-language")) {
               //print("<translation id=\"{0}" + "\">" + translated_text + "</translation>");
-               to_write_text = "<translation id=\"2484590049370101632" + "\">" + translated_text + "</translation>";
+               to_write_text = "<translation id=\"8112624470749725146" + "\">" + translated_text + "</translation>";
                //print("<translation id=\"8517434622200999683" + "\">" + translated_text + "</translation>");
                print(z.toString());
                expected_file_name = z.toString().replaceFirst("target-language=\"", "").replaceFirst("\"", "");
