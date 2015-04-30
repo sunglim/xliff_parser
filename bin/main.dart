@@ -79,7 +79,7 @@ Map<String, String> LANGUAGE_CODE_MAP =
   };
 
 main(List<String> arguments) {
-  String original = new File('/home/sungguk/program_store/localization-data_2/quickinputpicker.xliff').readAsStringSync();
+  String original = new File('/home/sungguk/program_store/localization-data_2/tvguide.xliff').readAsStringSync();
   var document = parse(original);
   var translated_text = "";
   var to_write_text = "";
@@ -87,7 +87,7 @@ main(List<String> arguments) {
   document.descendants.forEach((element) {
     // Exactly 
     //if (element.toString() == arguments[0]) {
-    if (element.toString() == "No signal") {
+    if (element.toString() == "No CI Module") {
       var preced = element.ancestors;
       for(var i in preced) {
         var parent2 = i.ancestors;
