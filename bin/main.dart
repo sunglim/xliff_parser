@@ -22,6 +22,8 @@ Map<String, String> LANGUAGE_CODE_MAP =
     "en-GB": "en-GB",
     "en-CN": "remove",
     "en-US": "remove",
+    // -------------- un supported language
+    "or-IN": "remove",
     "es-CO": "es-419",
     "es-ES": "es",
     "et-EE": "et",
@@ -56,7 +58,7 @@ Map<String, String> LANGUAGE_CODE_MAP =
     "pl-PL": "pl",
     "pt-BR": "pt-BR",
     "pt-PT": "pt-PT",
-    "or-IN": "or",
+    
     "ro-RO": "ro",
     "ru-RU": "ru",
     "sk-SK": "sk",
@@ -87,7 +89,7 @@ main(List<String> arguments) {
   document.descendants.forEach((element) {
     // Exactly 
     //if (element.toString() == arguments[0]) {
-    if (element.toString() == "Invalid Format") {
+    if (element.toString() == "Not Supported Service") {
       var preced = element.ancestors;
       for(var i in preced) {
         var parent2 = i.ancestors;
@@ -101,7 +103,7 @@ main(List<String> arguments) {
             for(var z in k.attributes) {
              if(z.toString().contains("target-language")) {
               //print("<translation id=\"{0}" + "\">" + translated_text + "</translation>");
-               to_write_text = "<translation id=\"1488005296091853473" + "\">" + translated_text + "</translation>";
+               to_write_text = "<translation id=\"4841945968328826810" + "\">" + translated_text + "</translation>";
                //print("<translation id=\"8517434622200999683" + "\">" + translated_text + "</translation>");
                print(z.toString());
                expected_file_name = z.toString().replaceFirst("target-language=\"", "").replaceFirst("\"", "");
