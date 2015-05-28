@@ -81,7 +81,7 @@ Map<String, String> LANGUAGE_CODE_MAP =
   };
 
 main(List<String> arguments) {
-  String original = new File('/home/sungguk/program_store/localization-data_2/tvguide.xliff').readAsStringSync();
+  String original = new File('/home/sungguk/program_store/localization-data_2/tvservice.xliff').readAsStringSync();
   var document = parse(original);
   var translated_text = "";
   var to_write_text = "";
@@ -89,7 +89,7 @@ main(List<String> arguments) {
   document.descendants.forEach((element) {
     // Exactly 
     //if (element.toString() == arguments[0]) {
-    if (element.toString() == "HD Service") {
+    if (element.toString() == "Component") {
       var preced = element.ancestors;
       for(var i in preced) {
         var parent2 = i.ancestors;
@@ -103,7 +103,7 @@ main(List<String> arguments) {
             for(var z in k.attributes) {
              if(z.toString().contains("target-language")) {
               //print("<translation id=\"{0}" + "\">" + translated_text + "</translation>");
-               to_write_text = "<translation id=\"6955221309999575405" + "\">" + translated_text + "</translation>";
+               to_write_text = "<translation id=\"3220177412864281577" + "\">" + translated_text + "</translation>";
                //print("<translation id=\"8517434622200999683" + "\">" + translated_text + "</translation>");
                print(z.toString());
                expected_file_name = z.toString().replaceFirst("target-language=\"", "").replaceFirst("\"", "");
