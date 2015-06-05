@@ -81,7 +81,15 @@ Map<String, String> LANGUAGE_CODE_MAP =
   };
 
 main(List<String> arguments) {
-  String original = new File('/home/sungguk/program_store/localization-data_2/tvservice.xliff').readAsStringSync();
+  String xliff_file = '/home/sungguk/program_store/localization-data_2/tvservice.xliff';
+  String parsing_string = "AV";
+  String translation_id = "124123";
+
+  final delete_file = new Directory('./ttest/');
+  delete_file.deleteSync(recursive:true);
+  delete_file.createSync();
+
+  String original = new File(xliff_file).readAsStringSync();
   var document = parse(original);
   var translated_text = "";
   var to_write_text = "";
@@ -89,7 +97,7 @@ main(List<String> arguments) {
   document.descendants.forEach((element) {
     // Exactly 
     //if (element.toString() == arguments[0]) {
-    if (element.toString() == "AV") {
+    if (element.toString() == parsing_string) {
       var preced = element.ancestors;
       for(var i in preced) {
         var parent2 = i.ancestors;
@@ -103,7 +111,7 @@ main(List<String> arguments) {
             for(var z in k.attributes) {
              if(z.toString().contains("target-language")) {
               //print("<translation id=\"{0}" + "\">" + translated_text + "</translation>");
-               to_write_text = "<translation id=\"3861025666771847622" + "\">" + translated_text + "</translation>";
+               to_write_text = "<translation id=\"" + translation_id +"\">" + translated_text + "</translation>";
                //print("<translation id=\"8517434622200999683" + "\">" + translated_text + "</translation>");
                print(z.toString());
                expected_file_name = z.toString().replaceFirst("target-language=\"", "").replaceFirst("\"", "");
